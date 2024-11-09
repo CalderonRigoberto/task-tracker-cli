@@ -47,7 +47,8 @@ Detailed instructions for installing and running the Task Tracker CLI are availa
 4. Add to your system's PATH for easy access
 
 Example:
-````shellbashCopy# 1. Create bin directory if it doesn't exist
+````shell
+# 1. Create bin directory if it doesn't exist
 mkdir -p ~/bin
 
 # 2. Create the executable script
