@@ -46,6 +46,38 @@ Detailed instructions for installing and running the Task Tracker CLI are availa
 3. Build the project using Maven
 4. Add to your system's PATH for easy access
 
+Example:
+````shellbashCopy# 1. Create bin directory if it doesn't exist
+mkdir -p ~/bin
+
+# 2. Create the executable script
+nano ~/bin/task-tracker
+
+# In the script, add:
+#!/bin/bash
+# If your project is on Linux:
+java -jar /path/to/your/project/target/task-tracker-cli-1.0-SNAPSHOT.jar "$@"
+
+# In my case, since the project is on Windows but I'm using it through WSL:
+java -jar /mnt/c/Users/example/Desktop/task-tracker-cli/target/task-tracker-cli-1.0-SNAPSHOT.jar "$@"
+Important Note:
+
+The /mnt/c/... path is specific for accessing Windows files from WSL
+If your project is directly on Linux, use the standard Linux path like /home/user/projects/... or ~/projects/...
+Make sure the path points to the JAR file generated in your project's target directory
+
+bashCopy# 3. Make the script executable
+chmod +x ~/bin/task-tracker
+
+# 4. Add bin to PATH in .zshrc
+nano ~/.zshrc
+export PATH="$HOME/bin:$PATH"
+
+# 5. Reload the configuration
+source ~/.zshrc
+This method allows you to have your project on Windows, compile it there, but execute it conveniently from WSL as a regular command.
+````
+
 ## Community and Learning
 
 This project is part of my learning journey, and I encourage others to:
