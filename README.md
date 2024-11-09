@@ -61,13 +61,15 @@ java -jar /path/to/your/project/target/task-tracker-cli-1.0-SNAPSHOT.jar "$@"
 
 # In my case, since the project is on Windows but I'm using it through WSL:
 java -jar /mnt/c/Users/example/Desktop/task-tracker-cli/target/task-tracker-cli-1.0-SNAPSHOT.jar "$@"
+````
 Important Note:
 
 The /mnt/c/... path is specific for accessing Windows files from WSL
 If your project is directly on Linux, use the standard Linux path like /home/user/projects/... or ~/projects/...
 Make sure the path points to the JAR file generated in your project's target directory
 
-bashCopy# 3. Make the script executable
+````shell
+# 3. Make the script executable
 chmod +x ~/bin/task-tracker
 
 # 4. Add bin to PATH in .zshrc
